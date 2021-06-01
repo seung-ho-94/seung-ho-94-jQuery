@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>자동차이동</title>
+    <!-- jQuery import 방식2(CDN 방식) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+		var timer = null;
+		var position = 0;
+		$("#moveCar").click(function(){
+			console.log("자동차 이동 버튼 클릭");
+			if(timer == null){
+				timer = setInterval(fnMoveCar, 100);
+			}
+		});
+		function fnMoveCar(){
+			position += 10;
+			$("#car").css("margin-left", position);
+		}
+		$("#car").click(function(){
+			clearInterval(timer);
+			timer = null;
+			
+		});
+	});
+	
+</script>
+<style>
+/*	#car { margin-left: 20px;}*/
+</style>
+</head>
+<body>
+    <button id="moveCar">자동차이동</button>
+    <hr>
+    <img id="car" src="images/car.jpg" width="150" alt="자동차이미지">
+    
+    
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
